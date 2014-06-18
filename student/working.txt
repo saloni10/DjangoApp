@@ -1,0 +1,19 @@
+#def fee(request):
+ #  form = FeeForm(request.POST)
+  #  if form.is_valid():
+   #   roll_no = form.cleaned_data['roll_no']
+      
+      #list=[ 1,2 ]
+    #  ob = Student.objects.get(id = 2)
+     # obj = Student.objects.values('name','age','roll_no','comp_fees','lib_fees').filter(id=2)
+     # c= ob.comp_fees
+     # l= ob.lib_fees
+      #total= c + l
+      #temp = {'obj': obj}
+     
+      #return render(request,'fee.html', {'obj': obj, 'total' :total } )
+  
+  #else:
+   # form= FeeForm()
+    #return render(request, 'form.html', {'form': form } )
+   

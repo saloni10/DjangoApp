@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>
+form </title>
+</head>
+<body>
+{% if error %}
+<p style="color:red"> Please Enter the roll no. </p>
+{% endif %}
+<form action = '/student/fee/' method = "get" >
+<!--{% csrf_token %} -->
+Enter the Roll no.{{form.as_p}}
+<!--<p> <input type='text' name='q' ></p> -->
+<p> <input type = 'submit' value= "Submit"> </p>
+</form>
+</body>
+</html> 
