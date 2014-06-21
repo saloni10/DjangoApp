@@ -6,7 +6,7 @@ from student.form import Sform
                 
 def fee(request):
     error = False
-    #form = Sform()
+    form = Sform()
     if 'Roll_no' in request.GET:
        q = request.GET['Roll_no']
        if not q:
@@ -14,9 +14,7 @@ def fee(request):
        else:
             val = Student.objects.filter(roll_no=q)
             return render(request, 'fee.html', {'list': val, 'query': q})
-    #return render(request, 'form.html', {'error': error})"""
-     #  val = Student.objects.filter(roll_no=q) 
-      # return render(request, 'fee.html', {'list': val, 'query': q})
+ 
     
     return render(request, 'form.html',{'error':error,'form':form})    
 

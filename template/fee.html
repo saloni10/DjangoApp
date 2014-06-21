@@ -3,21 +3,29 @@
 <title> fee-slip</title>
 <style>
 h1 { text-align : center; color: #080099 }
-h3,h4 { text-align : center; }
+h3,h4, .h { text-align : center; }
 .tag { font-weight : bold; margin-left: 5px; }
-.else {margin-top: 12% ; color:red; font-size: "20px"; }
-#head1 { margin-left: 10%; font-weight : bold;}
-#c_table { border: 2px solid; width: 40%; }
+.else {margin-top: 6% ; margin-left:2%; color:red; font-size: "20px"; }
+#head1 { margin-left: 1%; font-weight : bold;}
+.c_table { margin-left:70px;border: 2px solid; width: 40%; text-align: center; display:inline-block;}
+#cand {  display : inline-block;  }
+
 
 </style>
 </head>
+
 <body>
 <h1> GURU NANAK DEV ENGINEERING COLLEGE</h1> 
-<h4>Punjab Govt. Aided, NBA Accredited ISO-9001-2008 Certified</h4> 
+<h4>(Punjab Govt. Aided Status)</h4> 
+<p class="h"> An Autonomous College Under UGC Act [2(f) and 12(B)] </p>
+<p class="h">NBA Accredited ISO-9001-2008 Certified</p>
 <h3> FEE SLIP </h3>
 <br> </br>
+
 {% if list %} 
- <div id="c_table"> 
+ <div class="c_table">
+   <div class ="shrink">
+
   <p id="head1"> College's Copy </p>
    {% for value in list %}
         <p><span class="tag">Name : </span> {{ value.name }}</p>
@@ -26,9 +34,27 @@ h3,h4 { text-align : center; }
         <p><span  class="tag">Computer Fees : </span> {{ value.comp_fees }}</p> 
         <p><span  class="tag">Library Fees : </span> {{ value.lib_fees }} </p>
         {% endfor %}
+      </div>
  </div>    
 {% else %}
     <h3 class="else">No such Roll No. exists. Enter correct value to generate the fee-slip.</h3>
 {% endif %} 
+
+
+{% if list %} 
+ <div class="c_table" id=" cand"> 
+   <div class="shrink1">
+  <p id="head1"> Candidate's Copy </p>
+   {% for value in list %}
+        <p><span class="tag">Name : </span> {{ value.name }}</p>
+        <p><span class="tag">Age : </span> {{ value.age }} </p> 
+         <p><span class="tag">Roll No.</span> {{ value.roll_no }}</p> 
+        <p><span  class="tag">Computer Fees : </span> {{ value.comp_fees }}</p> 
+        <p><span  class="tag">Library Fees : </span> {{ value.lib_fees }} </p>
+        {% endfor %}
+      </div>
+ </div>    
+{% endif %} 
+
  </body>
  </html>

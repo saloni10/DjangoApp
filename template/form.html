@@ -1,17 +1,24 @@
 <html>
 <head>
-<title>
-form </title>
+<title> form </title>
+<style>
+.form { margin-top:7% ; margin-left:35%;} 
+.button { margin-left:40%; background-color:#9F000F;color:white; width:150px;height: 30px;border: 2px solid #9F000F ; border-radius : 2.5px;  -webkit-box-shadow: 0 0 4px #9F000F; }
+.button:hover{ -webkit-transform : scale(1.2);}
+.warn { color : red; margin-left: 38% ; font-size : 20px; }
+</style>
 </head>
 <body>
-{% if error %}
-<p style="color:red"> Please Enter the roll no. </p>
-{% endif %}
+{% load staticfiles %}
+<img src="{{STATIC_URL}}student/gndec.png" alt="My image" width = 1350px height=250px />
 <form action = '/student/fee/' method = "get" >
 <!--{% csrf_token %} -->
-Enter the Roll no.{{form.as_p}}
+{% if error %}
+<p class="warn"> Please Enter the roll no. </p>
+{% endif %}
+<div class="form"> {{form.as_p}} </div>
 <!--<p> <input type='text' name='q' ></p> -->
-<p> <input type = 'submit' value= "Submit"> </p>
+<input type = 'submit' class="button" value= "Generate Fee-Slip"> 
 </form>
 </body>
 </html> 
